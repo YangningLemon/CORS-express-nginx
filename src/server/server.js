@@ -1,6 +1,6 @@
 var express = require('express');
 
-///测试跨域的情况 写给前端 前端部署到nginx，在nginx配置中解决跨域问题
+///测试跨域的情况 写给前端 前端部署到nginx，在nginx配置中解决跨域问题----demo
 
 var app7 = express();
 app7.get("/", function (req, res) {
