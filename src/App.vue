@@ -1,22 +1,42 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <button @click="requestLocalHost97">请求主机localhost:97</button>
+    <button @click="requestLocalHost98">请求主机localhost:98</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import axios from "axios";
+
+//跨域的请求URL
+// const URL97 = "http://localhost:97/moxi";
+// const URL98 = "http://localhost:98/moxi";
+//正常的请求URL
+const URL97 = "apis/moxi";
+const URL98 = "apis2/moxi";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  components: {},
+  methods: {
+    requestLocalHost97() {
+      axios.get(URL97).then((res) => {
+        console.log(res);
+      });
+    },
+    requestLocalHost98() {
+      axios.get(URL98).then((res) => {
+        console.log(res);
+      });
+    },
+  },
+};
 </script>
 
 <style>
+body {
+  background-color: rgba(255, 255, 255, 0.3);
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
